@@ -1,10 +1,17 @@
 1.0.0 alpha
+
 基于ThinkCMF，增加微信插件。
+
 ・集成Ucenter
+
 ・文章评论功能
+
 ・留言功能
+
 ・全面支持SAE云平台
+
 ・文章内分页功能
+
 ・Ueditor最新版本
 
 INSTALL
