@@ -57,9 +57,13 @@ class PluginWechatModel extends CommonModel{
         }else if(preg_match('/快递(.+)/i',$content, $matchs)){
         	$result = json_decode(\plugins\Wechat\Api\Express\Express::getExpressInfo($matchs[1]),true);
         	if($result['message'] == 'ok'){
-        		$kuaidi = '单号为' . $matchs[1] . '(最近更新时间:' . $result['updatetime'] . ')的查询结果如下:\n';
+        		$kuaidi = '单号为' . $matchs[1] . '(最近更新时间:' . $result['updatetime'] . ')的查询结果如下:
+
+';
 				foreach($result['data'] as $v){
-					$kuaidi .= $v['time'] . ' ' . $v['context'] . '\n';
+					$kuaidi .= $v['time'] . ' ' . $v['context'] . '
+
+';
 				}
 				$weObj->text($kuaidi)->reply();
         	}else if($result['status'] == '201'){
