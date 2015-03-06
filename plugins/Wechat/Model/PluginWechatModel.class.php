@@ -72,22 +72,43 @@ class PluginWechatModel extends CommonModel{
         		$weObj->text('查询失败,请重新回复查询内容')->reply();
         	}
 
-        }else if(preg_match('/双色球/',$content, $matchs)){
-        	$url = 'http://f.opencai.net/utf8/ssq.json';
-        	$ch = curl_init();
-        	$timeout = 5;
-        	curl_setopt($ch, CURLOPT_URL, $url);
-        	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-        	$file_contents = curl_exec($ch);
-        	curl_close($ch);
-        	dump(json_decode($file_contents,true));
+        }else if(preg_match('/彩票/',$content, $matchs)){
+            $lotteryList = \plugins\Wechat\Api\Lottery\Lottery::getLotteryList();
+            $text = "查询相应彩票结果请回复对应的查询码,比如,要查询超级大乐透,则请回复'cp0';
+";
+            foreach($lotteryList as $k => $v){
+                $text .= $v['area'].$v['descr'] . " : cp" . $k . "
+";
+                if($k > 77) break;
+            }
+            $weObj->text($text)->reply();
+        }else if(preg_match('/cp(.+)/i',$content, $matchs)){
+            $lotteryList = \plugins\Wechat\Api\Lottery\Lottery::getLotteryList();
+            $lotteryCode = $lotteryList[$matchs[1]]['code'];
+            $lotteryName = $lotteryList[$matchs[1]]['area'] . $lotteryList[$matchs[1]]['descr'];
+            $lotteryRes = \plugins\Wechat\Api\Lottery\Lottery::getLotteryResult($lotteryCode,'json','utf8',5);
+            $lotteryRes = json_decode($lotteryRes,true);
+            if($lotteryRes['rows'] > 0){
+                $text = $lotteryName . "最近5期开奖结果如下:
+                
+";
+                foreach($lotteryRes['data'] as $v){
+                    $text .= "第" . $v['expect'] . "期" . "
+开奖时间:" . $v['opentime'] . "
+结果:" . $v['opencode'] . "
+                
+";
+                }
+                $weObj->text($text)->reply();
+            }else{
+                $weObj->text('抱歉,查不到该彩票开奖信息')->reply();
+            }
+
         }else if(preg_match('/找(.+)/i',$content, $matchs)){
         	$judge = M('PluginWechatUser')->where(array('openid'=>$openid))->find();
         	if($judge){
         		if($judge['latitude'] && $judge['longitude']){
-        			$json_array = file_get_contents('http://api.map.baidu.com/place/v2/search?query=' . urlencode($matchs[1]) . '&output=json&ak=' . $config['BaiduAk'] . '&page_size=10&page_num=0&scope=2&location=' . $judge['latitude'] . ',' . $judge['longitude'] . '&radius=2000');
-        			$json_array = json_decode($json_array,true);
+        			$json_array = json_decode(file_get_contents('http://api.map.baidu.com/place/v2/search?query=' . urlencode($matchs[1]) . '&output=json&ak=' . $config['BaiduAk'] . '&page_size=10&page_num=0&scope=2&location=' . $judge['latitude'] . ',' . $judge['longitude'] . '&radius=2000'),true);
         			if($json_array['message'] == 'ok'){
         				foreach($json_array['results'] as $k => $v){
         					$img_array = json_decode(file_get_contents('http://map.baidu.com/detail?qt=img&uid=' . $v['uid']),true);
