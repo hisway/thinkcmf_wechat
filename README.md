@@ -1,144 +1,26 @@
-UPDATE
-===
-X1.5.0
-¡¤Ôö¼Ó²å¼þ»úÖÆ
-¡¤Ôö¼Ó±à¼­Æ÷¸½¼þÉÏ´«¹¦ÄÜ
-¡¤ºËÐÄÉý¼¶ÖÁthinkphp 3.2.3£¬±ØÐë¿ªÆôphp_pdo_mysqlÀ©Õ¹
-¡¤ÓÅ»¯ÏµÍ³È¨ÏÞ¹ÜÀí£¬Ôö¼Óauth+rbac»ìºÏÈÏÖ¤Ä£Ê½
-¡¤Ôö¼ÓÎÄ¼þ´æ´¢À©Õ¹Ö§³Ö£¬Ä¬ÈÏÖ§³Ö±¾µØºÍÆßÅ£ÔÆ´æ´¢
-¡¤Ôö¼ÓÊÖ»úÄ£°åÖ§³Ö
-¡¤Ôö¼ÓÊÖ»úÄ£°åÕì²âºóÌ¨¿ªÆô¹Ø±Õ¹¦ÄÜ£¬Ä¬ÈÏ¹Ø±ÕÊÖ»úÄ£°åÕì²â
-¡¤Ôö¼ÓMUIÊÖ»ú¿ª·¢¿ò¼Ü
-¡¤Ôö¼ÓÆÀÂÛÊ±¼ä¼ä¸ôÉèÖÃ
-¡¤Ôö¼ÓÊÓÆµ²åÈë
-¡¤Ôö¼ÓÈ¥³ýÄ£°åÎÄ¼þÀïÃæµÄhtml¿Õ¸ñÓë»»ÐÐ
-¡¤Ôö¼ÓºóÌ¨¹ÜÀíÔ±ÁÐ±í·ÖÒ³
-¡¤Ôö¼ÓÎÄÕÂÒ³ÉÏÒ»Æª¡¢ÏÂÒ»Æª¹¦ÄÜ
-¡¤ÓÅ»¯²Ëµ¥¹ÜÀí·½Ê½£¬²ÉÓÃÔö¼ÓÎÄ¼þ·½Ê½²Ëµ¥¹ÜÀí£¬·½±ã³ÌÐòÉý¼¶
-¡¤ÓÅ»¯µ¼º½Êó±ê»®¹ýÏÂÀ­²Ëµ¥
-¡¤ÓÅ»¯¹ÜÀíÔ±ÐÅÏ¢±à¼­,Ôö¼Ó×Ö¶Î¹ýÂË
-¡¤ÓÅ»¯·ÇºóÌ¨Èë¿ÚµÇÂ¼Ìø×ªµ½Ê×Ò³
-¡¤ÐÞ¸´simplebootxËÑË÷Á´½Ó´íÎó
-¡¤ÐÞ¸´ucenter¸÷ÖÖÎÊÌâ
-¡¤ÐÞ¸´ºóÌ¨ÓÊ¼þ·¢¼þÈËÎÞ·¨ÉèÖÃ
-¡¤ÐÞ¸´Èë¿ÚÎÄ¼þSITE_PATH³£Á¿²¿·Ö·þÎñÆ÷Òì³£
-¡¤ÐÞ¸´saeÍ·Ïñ²Ã¼ô
-¡¤ÐÞ¸´·ÖÀà±à¼­Ê±²ã¼¶³ö´í
-¡¤ÐÞ¸´±¸·Ý»¹Ô­Êý¾ÝÎª¿Õ
-¡¤Í³Ò»ËùÓÐÄ£¿éÄ£°åÂ·¾¶·Ö¸î·ûÎª/
-¡¤É¾³ýthinkphp VendorÄ¿Â¼µÚÈý·½Àà¿â
-¡¤ÒÆ³ýSendMail·½·¨
-¡¤Ìæ»»scandir·½·¨Îªsp_scan_dir
-¡¤Í³Ò»SAEÅÐ¶Ï·½·¨
-
-¡¤Í³Ò»ajaxReturnÎªthinkphp 3.2.*ÒÔºóÓÃ·¨£¬Èç¹ûÒ»Ö±ÓÃthinkphp  3.0ÒÔÇ°µÄÓÃ·¨£¬À©Õ¹Ê±×¢ÒâÓÃsp_ajax_return()×öÒ»ÏÂÉý¼¶
-
-×¢£ººóÌ¨Ä£°å·Ö¸î·ûÒÑ¾­Í³Ò»Îª/£¬Ô­À´µÄÀàËÆAdmin/Main.index.htmlÎÄ¼þÒÑ¾­¸ÄÎªAdmin/Main/index.htmlÇëºóÌ¨¿ª·¢Ê±×¢Òâ
-ThinkCMFÈ«Ìå¹±Ï×Õß×£´ó¼Ò2015Äê´ó¼ª´óÀû£¬¿ªÐÄÐÒ¸££¡¡¶¸øÄãÒ»¸öÎÇ¡·
-
-===
-X1.3.0
-¡¤Í³Ò»ActionÎªController
-¡¤Ôö¼ÓÎÄÕÂËÑË÷¹¦ÄÜ
-¡¤Ôö¼ÓÇ°Ì¨±à¼­Æ÷
-¡¤Ôö¼ÓÄ£°å³£Á¿__STATICS__
-¡¤Ôö¼Ó×îºóÆÀÂÛÊ±¼äÐ´Èë
-¡¤ÐÞ¸´leuu bug 
-¡¤CommonModel _before_write Êý¾Ý¹ýÂËbug
-¡¤ºóÌ¨ÆÀÂÛ¹ÜÀí,Ä¬ÈÏËùÓÐÆÀÂÛ
-¡¤ÎÄÕÂ·ÖÀàpath¸üÐÂÓÅ»¯
-¡¤simplebootxÄ£°åÎÄÕÂÒ³cssÑùÊ½ÓÅ»¯
-¡¤ÐÞ¸´·ÖÒ³Ààbug
-¡¤ºóÌ¨ÎÄÕÂ±à¼­ËùÓÐÎÄÕÂÁ´½Ó´íÎó
-¡¤ÐÞ¸´bug#4ÑéÖ¤Âë²»ÏÔÊ¾
-¡¤ÓÅ»¯bug#3Ò³ÃæÊ¹ÓÃLEUUº¯ÊýºóÃ¿¸öÒ³Ãæ¶¼²éÑ¯
-¡¤ÓÅ»¯¹«¹²Ä£ÐÍµÄµ÷ÓÃ·½·¨£¬ÒÔ¼æÈÝphp5.3.0-5.3.2
-¡¤ÐÞ¸´sp_sql_posts_bycatidºÍsp_sql_posts_paged_bycatidÁ½¸ö·½·¨whereÓï¾äÎÊÌâ
-¡¤ÐÞ¸´blueskyÖ÷Ìâ·ÖÒ³ÑùÊ½ÎÊÌâ
-¡¤ÐÞ¸´ÎÄÕÂÍÆ¼ö£¬ÖÃ¶¥bug
-===
-X1.2.0
-¡¤urlÃÀ»¯
-¡¤ÌØÊâÓÃ»§Ãû¹ýÂË
-¡¤Ôö¼ÓÍÆ¼ö£¬ÖÃ¶¥¹¦ÄÜ
-¡¤»ÃµÆÆ¬Òþ²ØÏÔÊ¾¹¦ÄÜ
-¡¤¹ã¸æÒþ²ØÏÔÊ¾¹¦ÄÜ
-¡¤ÓÑÇéÁ´½ÓÒþ²ØÏÔÊ¾¹¦ÄÜ
-¡¤ÆÀÂÛ¼ÆÊý
-===
-X1.1.0
-È«ÐÂµÄThinkPHP 3.2.2¼Ü¹¹£¬Ê¹ÓÃphpÃüÃû¿Õ¼ä£¬ÈÃ¿ª·¢¿ìÆðÀ´°É£¡
-
-¡¤Í³Ò»MemberÓ¦ÓÃÎªUser,ºÏ²¢Ç°Ì¨»áÔ±ºÍºóÌ¨¹ÜÀíÔ±
-¡¤ÍêÉÆÓÃ»§ÖÐÐÄ£¬»áÔ±µÇÂ¼×¢²á
-¡¤Ôö¼Ó±à¼­Í·Ïñ£¬°ó¶¨ÕËºÅ£¬ÎÒµÄÆÀÂÛ£¬ÎÒµÄÊÕ²Ø
-¡¤Ôö¼ÓÎÄÕÂµãÔÞ£¬ÊÕ²Ø£¬²é¿´¹¦ÄÜ£¬¿ÉÓëÆäËüÓ¦ÓÃ¹²ÓÃ
-¡¤ÔöÇ¿ÎÄÕÂÆÀÂÛ¹¦ÄÜ£¬·½±ã¶àÓ¦ÓÃ¹²ÓÃ
-¡¤ÓÅ»¯ÁôÑÔ¹¦ÄÜ£¬ÔöÇ¿°²È«ÐÔ
-¡¤ÓÅ»¯Ç°Ì¨Ä£°å£¬Ôö¼Ó¶à¸öÊµÓÃ×é¼þ£¬·½±ãÒÔºó¸´ÓÃ
-¡¤Ôö¼ÓºóÌ¨·ç¸ñÇÐ»»¹¦ÄÜ£»
-¡¤Ôö¼ÓºóÌ¨·ç¸ñbluesky
-¡¤ÓÅ»¯ºóÌ¨²Ëµ¥Ê¹ÓÃ·½Ê½
-¡¤ÓÅ»¯Êý¾Ý¿âÖÐÒ»Ð©²»¹æ·¶×Ö¶Î
-¡¤Ôö¼ÓÇ°Ì¨±êÇ©¿âTagLibHome£¬Í³Ò»include±êÇ©Îªtc_include
-===
-X1.0.0
-È«ÐÂµÄThinkPHP 3.2.2¼Ü¹¹£¬Ê¹ÓÃphpÃüÃû¿Õ¼ä£¬ÈÃ¿ª·¢¿ìÆðÀ´°É£¡
-
-¡¤Í³Ò»Ç°ºóÌ¨UI¿ò¼ÜÎªsimpleboot(bootstrap 2.3.2 ThinkCMFÓÅ»¯°æ)
-¡¤¼¯³ÉUcenter
-¡¤Ôö¼ÓÎÄÕÂÆÀÂÛ¹¦ÄÜ
-¡¤Ôö¼ÓÁôÑÔ¹¦ÄÜ
-¡¤È«ÃæÖ§³ÖSAEÔÆÆ½Ì¨
-¡¤Ôö¼ÓÎÄÕÂÄÚ·ÖÒ³¹¦ÄÜ
-¡¤Éý¼¶ºóÌ¨±à¼­Æ÷µ½Ueditor×îÐÂ°æ±¾
-¡¤ÓÅ»¯ºóÌ¨ajaxÌá½»£¬Î´µÇÂ½Ê±×Ô¶¯ÍË³ö
-¡¤ÓÅ»¯ºóÌ¨ËùÓÐÎÄÕÂ°´·¢²¼Ê±¼äµÝ¼õÅÅÐò
-¡¤ÐÞ¸´ºóÌ¨ÃÜÂë»áÅ¼È»²»¶ÔµÄ´íÎó
-¡¤ÐÞ¸´SAE£¬linuxÏÂÀà¿â¼ÓÔØÊ§°Ü
-¡¤ÐÞ¸´ueditor chromeÄ£°å¹¦ÄÜbug
-¡¤ÐÞ¸´ÎÄ¼þÉÏ´«bug
-===
-X1.0.0 alpha2
-ÐÞ¸´SAE£¬linuxÏÂÀà¿â¼ÓÔØÊ§°Ü
-ÐÞ¸´ueditor chromeÄ£°å¹¦ÄÜbug
-ÐÞ¸´ÎÄ¼þÉÏ´«bug
-
-
-X1.0.0 alpha
-È«ÐÂµÄThinkPHP 3.2.2¼Ü¹¹£¬Ê¹ÓÃphpÃüÃû¿Õ¼ä£¬ÈÃ¿ª·¢¿ìÆðÀ´°É£¡
-¡¤¼¯³ÉUcenter
-¡¤Ôö¼ÓÎÄÕÂÆÀÂÛ¹¦ÄÜ
-¡¤Ôö¼ÓÁôÑÔ¹¦ÄÜ
-¡¤È«ÃæÖ§³ÖSAEÔÆÆ½Ì¨
-¡¤Ôö¼ÓÎÄÕÂÄÚ·ÖÒ³¹¦ÄÜ
-¡¤Éý¼¶ºóÌ¨±à¼­Æ÷µ½Ueditor×îÐÂ°æ±¾
-¡¤ÓÅ»¯ºóÌ¨ajaxÌá½»£¬Î´µÇÂ½Ê±×Ô¶¯ÍË³ö
-¡¤ÓÅ»¯ºóÌ¨ËùÓÐÎÄÕÂ°´·¢²¼Ê±¼äµÝ¼õÅÅÐò
-¡¤ÐÞ¸´ºóÌ¨ÃÜÂë»áÅ¼È»²»¶ÔµÄ´íÎó
-
+1.0.0 alpha
+åŸºäºŽThinkCMFï¼Œå¢žåŠ å¾®ä¿¡æ’ä»¶ã€‚
+ãƒ»é›†æˆUcenter
+ãƒ»æ–‡ç« è¯„è®ºåŠŸèƒ½
+ãƒ»ç•™è¨€åŠŸèƒ½
+ãƒ»å…¨é¢æ”¯æŒSAEäº‘å¹³å°
+ãƒ»æ–‡ç« å†…åˆ†é¡µåŠŸèƒ½
+ãƒ»Ueditoræœ€æ–°ç‰ˆæœ¬
 
 INSTALL
 ===
-°²×°ÇëÖ´ÐÐhttp://yourdomain/install/index.php
-°²×°Íê³ÉºóÇëÉ¾³ý»ò¸ÄÃûinstall/index.php
+å®‰è£…è¯·æ‰§è¡Œhttp://yourdomain/install/index.php
+å®‰è£…å®ŒæˆåŽè¯·åˆ é™¤æˆ–æ”¹åinstall/index.php
 
 README
 ===
-ThinkCMFÊÇÒ»¿î»ùÓÚPHP+MYSQL¿ª·¢µÄÖÐÎÄÄÚÈÝ¹ÜÀí¿ò¼Ü¡£ThinkCMFÌá³öÁé»îµÄÓ¦ÓÃ»úÖÆ£¬¿ò¼Ü×ÔÉíÌá¹©»ù´¡µÄ¹ÜÀí¹¦ÄÜ£¬¶ø¿ª·¢Õß¿ÉÒÔ¸ù¾Ý×ÔÉíµÄÐèÇóÒÔÓ¦ÓÃµÄÐÎÊ½½øÐÐÀ©Õ¹¡£Ã¿¸öÓ¦ÓÃ¶¼ÄÜ¶ÀÁ¢µÄÍê³É×Ô¼ºµÄÈÎÎñ£¬Ò²¿ÉÍ¨¹ýÏµÍ³µ÷ÓÃÆäËûÓ¦ÓÃ½øÐÐÐ­Í¬¹¤×÷¡£ÔÚÕâÖÖÔËÐÐ»úÖÆÏÂ£¬¿ª·¢ÉÌ³¡Ó¦ÓÃµÄÓÃ»§ÎÞÐè¹ØÐÄ¿ª·¢SNSÓ¦ÓÃÊ±ÈçºÎ¹¤×÷µÄ£¬µ«ËûÃÇÖ®¼äÓÖ¿ÉÍ¨¹ýÏµÍ³±¾Éí½øÐÐÐ­µ÷£¬´ó´óµÄ½µµÍÁË¿ª·¢³É±¾ºÍ¹µÍ¨³É±¾¡£
-¹ÙÍø:http://www.thinkcmf.com
-ÎÄµµ:http://www.thinkcmf.com/index.php?m=document
+ThinkCMFæ˜¯ä¸€æ¬¾åŸºäºŽPHP+MYSQLå¼€å‘çš„ä¸­æ–‡å†…å®¹ç®¡ç†æ¡†æž¶ã€‚ThinkCMFæå‡ºçµæ´»çš„åº”ç”¨æœºåˆ¶ï¼Œæ¡†æž¶è‡ªèº«æä¾›åŸºç¡€çš„ç®¡ç†åŠŸèƒ½ï¼Œè€Œå¼€å‘è€…å¯ä»¥æ ¹æ®è‡ªèº«çš„éœ€æ±‚ä»¥åº”ç”¨çš„å½¢å¼è¿›è¡Œæ‰©å±•ã€‚æ¯ä¸ªåº”ç”¨éƒ½èƒ½ç‹¬ç«‹çš„å®Œæˆè‡ªå·±çš„ä»»åŠ¡ï¼Œä¹Ÿå¯é€šè¿‡ç³»ç»Ÿè°ƒç”¨å…¶ä»–åº”ç”¨è¿›è¡ŒååŒå·¥ä½œã€‚åœ¨è¿™ç§è¿è¡Œæœºåˆ¶ä¸‹ï¼Œå¼€å‘å•†åœºåº”ç”¨çš„ç”¨æˆ·æ— éœ€å…³å¿ƒå¼€å‘SNSåº”ç”¨æ—¶å¦‚ä½•å·¥ä½œçš„ï¼Œä½†ä»–ä»¬ä¹‹é—´åˆå¯é€šè¿‡ç³»ç»Ÿæœ¬èº«è¿›è¡Œåè°ƒï¼Œå¤§å¤§çš„é™ä½Žäº†å¼€å‘æˆæœ¬å’Œæ²Ÿé€šæˆæœ¬ã€‚
+å®˜ç½‘:http://www.thinkcmf.com
+æ–‡æ¡£:http://www.thinkcmf.com/index.php?m=document
 
-ThinkCMF ÃâÔðÉùÃ÷
-  1¡¢ÀûÓÃ ThinkCMF ¹¹½¨µÄÍøÕ¾µÄÈÎºÎÐÅÏ¢ÄÚÈÝÒÔ¼°µ¼ÖÂµÄÈÎºÎ°æÈ¨¾À·×ºÍ·¨ÂÉÕùÒé¼°ºó¹û£¬ThinkCMF ¹Ù·½²»³Ðµ£ÈÎºÎÔðÈÎ¡£
-  2¡¢ÄúÒ»µ©°²×°Ê¹ÓÃThinkCMF£¬¼´±»ÊÓÎªÍêÈ«Àí½â²¢½ÓÊÜ±¾Ð­ÒéµÄ¸÷ÏîÌõ¿î£¬ÔÚÏíÓÐÉÏÊöÌõ¿îÊÚÓèµÄÈ¨Á¦µÄÍ¬Ê±£¬ÊÜµ½Ïà¹ØµÄÔ¼ÊøºÍÏÞÖÆ¡£
+ThinkCMF å…è´£å£°æ˜Ž
+  1ã€åˆ©ç”¨ ThinkCMF æž„å»ºçš„ç½‘ç«™çš„ä»»ä½•ä¿¡æ¯å†…å®¹ä»¥åŠå¯¼è‡´çš„ä»»ä½•ç‰ˆæƒçº çº·å’Œæ³•å¾‹äº‰è®®åŠåŽæžœï¼ŒThinkCMF å®˜æ–¹ä¸æ‰¿æ‹…ä»»ä½•è´£ä»»ã€‚
+  2ã€æ‚¨ä¸€æ—¦å®‰è£…ä½¿ç”¨ThinkCMFï¼Œå³è¢«è§†ä¸ºå®Œå…¨ç†è§£å¹¶æŽ¥å—æœ¬åè®®çš„å„é¡¹æ¡æ¬¾ï¼Œåœ¨äº«æœ‰ä¸Šè¿°æ¡æ¬¾æŽˆäºˆçš„æƒåŠ›çš„åŒæ—¶ï¼Œå—åˆ°ç›¸å…³çš„çº¦æŸå’Œé™åˆ¶ã€‚
  
-ThinkCMF Ê¹ÓÃ½¨Òé
-  1¡¢ÇëÔÚÄúµÄÍøÕ¾Ê×Ò³¼ÓÉÏThinkCMFÏà¹ØÁ´½Ó£¬O(¡É_¡É)O~ £¡
-
-¾èÔùThinkCMF
-  http://www.thinkcmf.com/donate/index.html
-  ÄúµÄÃ¿Ò»·Ý°ïÖú¶¼½«Ö§³ÖThinkCMF×öµÄ¸üºÃ£¬×ßµÄ¸üÔ¶£¡
-  
-  
-ThinkCMF ÕýÔÚÎªÄã¿ª·Å¸ü¶à....
+ThinkCMF ä½¿ç”¨å»ºè®®
+  1ã€è¯·åœ¨æ‚¨çš„ç½‘ç«™é¦–é¡µåŠ ä¸ŠThinkCMFç›¸å…³é“¾æŽ¥ï¼ŒO(âˆ©_âˆ©)O~ ï¼
