@@ -1,0 +1,208 @@
+<admintpl file="header"/>
+<script type="text/javascript">
+</script>
+<style type="text/css">
+.col-auto {
+	overflow: hidden;
+	_zoom: 1;
+	_float: left;
+	border: 1px solid #c2d1d8;
+}
+.col-right {
+	float: right;
+	width: 210px;
+	overflow: hidden;
+	margin-left: 6px;
+	border: 1px solid #c2d1d8;
+}
+
+body fieldset {
+	border: 1px solid #D8D8D8;
+	padding: 10px;
+	background-color: #FFF;
+}
+body fieldset legend {
+    background-color: #F9F9F9;
+    border: 1px solid #D8D8D8;
+    font-weight: 700;
+    padding: 3px 8px;
+}
+.list-dot{ padding-bottom:10px}
+.list-dot li,.list-dot-othors li{padding:5px 0; border-bottom:1px dotted #c6dde0; font-family:"宋体"; color:#bbb; position:relative;_height:22px}
+.list-dot li span,.list-dot-othors li span{color:#004499}
+.list-dot li a.close span,.list-dot-othors li a.close span{display:none}
+.list-dot li a.close,.list-dot-othors li a.close{ background: url("__ROOT__/statics/images/cross.png") no-repeat left 3px; display:block; width:16px; height:16px;position: absolute;outline:none;right:5px; bottom:5px}
+.list-dot li a.close:hover,.list-dot-othors li a.close:hover{background-position: left -46px}
+.list-dot-othors li{float:left;width:24%;overflow:hidden;}
+</style>
+</head>
+<body class="J_scroll_fixed">
+<div class="wrap J_check_wrap">
+  <div class="nav">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#">设置店铺信息</a></li>
+      </ul>
+  </div>
+  <form name="myform" id="myform" action="{:U('Shopadmin/info_post')}" method="post" class="J_ajaxForm" enctype="multipart/form-data">
+  <div class="col-right">
+    <div class="table_full">
+      <table width="100%">
+  
+  		<tr>
+          <td><b>缩略图</b></td>
+        </tr>
+        <tr>
+          <td>
+          	<div  style="text-align: center;"><input type='hidden' name='shop_thumb' id='thumb' value='{$shop_thumb}'>
+			<a href='javascript:void(0);' onclick="flashupload('thumb_images', '附件上传','thumb',thumb_images,'1,jpg|jpeg|gif|png|bmp,1,,,1','','','');return false;">
+				<if condition="empty($shop_thumb)">
+					<img src="__ROOT__/statics/images/icon/upload-pic.png" id='thumb_preview' width='135' height='113' style='cursor:hand' />
+				<else/>
+					<img src="{:sp_get_asset_upload_path($shop_thumb)}" id='thumb_preview' width='135' height='113' style='cursor:hand' />
+				</if>
+				
+			</a>
+            <input type="button"  class="btn" onclick="$('#thumb_preview').attr('src','__ROOT__/statics/images/icon/upload-pic.png');$('#thumb').val('');return false;" value="取消图片">
+            </div>
+			</td>
+        </tr>
+         <!-- <tr>
+          <td><b>二维码</b></td>
+        </tr>
+        <tr>
+          <td>
+          	<div  style="text-align: center;"><input type='hidden' name='startpicurl' id='thumb' value='{$startpicurl}'>
+			<a href='javascript:void(0);' onclick="return false;">
+				<if condition="empty($qrcode_scene_id)">
+					<img src="__ROOT__/statics/images/icon/upload-pic.png" id='thumb_preview' width='135' height='113' style='cursor:hand' />
+				<else/>
+					<img src='{:sp_get_asset_upload_path("weixin/qrcode/qr_limit_scene_$qrcode_scene_id.jpg")}' id='thumb_preview' width='135' height='135' style='cursor:hand' onclick="open_iframe_dialog('__UPLOAD__weixin/qrcode/qr_limit_scene_{$qrcode_scene_id}.jpg{$js_debug}','二维码{$vo.label}',{width:'430px',height:'430px'})" />
+				</if>
+			
+			</a>
+			<if condition="!empty($id) && empty($qrcode_scene_id)">
+            	<a class="btn J_ajax_dialog_btn" data-msg="点击确定生成二维码" href="{:u('Shopadmin/get_qrcode',array('id'=>$id))}">生成二维码</a>
+            </if>
+            </div>
+			</td>
+        </tr> -->
+         <tr>
+          <td><b>状态</b></td>
+        </tr>
+        <tr>
+          <td>
+          	<span class="switch_list cc">
+          	<php>
+          		$status_yes=$status==1?"checked":"";
+          		$status_no=$status==0?"checked":"";
+          	</php>
+			<label><input type="radio" name="status" value="1" {$status_yes}><span>审核通过</span></label>
+			<label><input type="radio" name="status" value="0" {$status_no}><span>待审核</span></label>
+		 	</span>
+		 </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-auto">
+    <div class="h_a">店铺信息</div>
+    <div class="table_full">
+      <table cellpadding="0" cellspacing="0" class="table_form" width="100%">
+          <tbody>
+            <tr>
+              <th width="150">名称:</th>
+              <td><input type="text" class="input input_hd J_title_color" name="shop_name" value="{$shop_name}"><span class="must_red">*</span></td>
+            </tr>
+			<tr>
+              <th>店铺简介:</th>
+              <td>
+              		<textarea name="shop_intro" rows="5" cols="57">{$shop_intro}</textarea>
+				</td>
+            </tr>
+            <tr>
+              <th>店铺介绍:</th>
+              <td>
+              		<script type="text/plain" id="content" name="shop_decription">{$shop_decription}</script>
+				</td>
+            </tr>
+			<tr>
+              <th>店铺所在城市:</th>
+              <td>
+              <input name="shop_province" type="text" class="input" value="{$shop_province}" readonly="readonly" style="cursor: pointer;" onclick="select_location()" title="点击选择城市">
+              <input name="shop_city" type="text" class="input" value="{$shop_city}" readonly="readonly" style="cursor: pointer;" onclick="select_location()" title="点击选择城市">
+              <input name="shop_district" type="text" class="input" value="{$shop_district}" readonly="readonly" style="cursor: pointer;" onclick="select_location()" title="点击选择城市">
+			 </td>
+            </tr>
+            <tr>
+              <th>店铺详细地址:</th>
+              <td>
+              		<textarea name="shop_address" rows="5" cols="57"  style="cursor: pointer;" ondblclick="select_location()" title="双击选择详细地址">{$shop_address}</textarea>
+			 </td>
+            </tr>
+            
+            <tr>
+              <th>店铺经纬度:</th>
+              <td>
+              	<input id="lng_input" type="text" class="input" name="shop_lng" value="{$shop_lng}" readonly="readonly" title="点击选择经纬度" style="cursor: pointer;" onclick="select_location()">
+              	<input id="lat_input" type="text" class="input" name="shop_lat" value="{$shop_lat}" readonly="readonly" title="点击选择经纬度" style="cursor: pointer;" onclick="select_location()">
+              </td>
+            </tr>
+            <tr>
+              <th>店铺电话:</th>
+              <td>
+              	<input name="shop_phone" type="text" class="input" value="{$shop_phone}">
+			  </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <div class="btn_wrap" style="z-index:999;text-align: center;">
+    <div class="btn_wrap_pd">
+     <input type="hidden" name="id" value="{$id}"/>
+      <button class="btn btn_submit J_ajax_submit_btn"type="submit">保存</button>
+      <a class="btn" href="{:U('shopadmin/index')}">返回</a>
+    </div>
+  </div>
+ </form>
+</div>
+<script type="text/javascript" src="__ROOT__/statics/js/common.js{$js_debug}"></script>
+<script type="text/javascript" src="__ROOT__/statics/js/content_addtop.js{$js_debug}"></script>
+<script type="text/javascript">
+//编辑器路径定义
+var editorURL = GV.DIMAUB;
+</script>
+<script type="text/javascript"  src="__ROOT__/statics/js/ueditor/ueditor.config.js{$js_debug}"></script>
+<script type="text/javascript"  src="__ROOT__/statics/js/ueditor/ueditor.all.min.js{$js_debug}"></script>
+<script>
+$(function(){
+	
+	//编辑器
+    editorcontent = new baidu.editor.ui.Editor();
+    editorcontent.render( 'content' );
+    try{editorcontent.sync();}catch(err){};
+    //增加编辑器验证规则
+   /*  jQuery.validator.addMethod('editorcontent',function(){
+        try{editorcontent.sync();}catch(err){};
+        return editorcontent.hasContents();
+    }); */
+});
+
+function select_location(){
+	open_map_dialog('{:u('api/mapadmin/index',array('lng'=>$shop_lng,'lat'=>$shop_lat))}','选择店铺位置',{},map_callback);
+}
+function map_callback(lng,lat,address){
+	$("#lng_input").val(lng);
+	$("#lat_input").val(lat);
+	$("[name='shop_province']").val(address.province);
+	$("[name='shop_city']").val(address.city);
+	$("[name='shop_district']").val(address.district);
+	$("[name='shop_address']").val(address.address);
+	
+	
+	//$(".J_ajax_submit_btn").click();
+}
+</script>
+<style>#calroot {z-index: 9999;}</style>
+</body>
+</html>

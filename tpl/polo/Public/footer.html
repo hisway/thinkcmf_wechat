@@ -1,0 +1,19 @@
+<br><br><br>
+<!-- Footer
+      ================================================== -->
+      <hr>
+{:hook('footer')}
+      <div id="footer">
+        <h4>友情链接</h4>
+        <div class="links">
+        <php>$links=sp_getlinks();</php>
+        <foreach name="links" item="vo">
+          <a href="{$vo.link_url}" target="{$vo.link_target}" style="padding:0 5px;">{$vo.link_name}</a>
+        </foreach>
+        </div>
+        <p>
+        {$site_copyright}
+        </p>
+      </div>
+      <div id="backtotop"><i class="fa fa-arrow-circle-up"></i></div>
+      {$site_tongji}
