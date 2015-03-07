@@ -25,7 +25,7 @@ class WechatPlugin extends Plugin{
     
     public function install(){//安装方法必须实现
         $db_prefix = C('DB_PREFIX');
-        $sql=<<<SQL
+        $sql1=<<<SQL
 CREATE TABLE `{$db_prefix}plugin_wechat_user` (
   `id` int(20) NOT NULL AUTO_INCREMENT,
   `uid` int(20) NOT NULL COMMENT '绑定本站uid',
@@ -46,13 +46,37 @@ CREATE TABLE `{$db_prefix}plugin_wechat_user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SQL;
-        D()->execute($sql);
+        $sql2=<<<SQL
+CREATE TABLE `{$db_prefix}plugin_wechat_autoreply` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL COMMENT '关键字回复功能名称',
+  `rule` varchar(255) NOT NULL COMMENT '正则规则',
+  `function` varchar(50) NOT NULL COMMENT '回复调用方法',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '功能是否启用,0为不启用,1为启用,默认为1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+SQL;
+        $sql3=<<<INSERT
+INSERT INTO `{$db_prefix}plugin_wechat_autoreply` VALUES
+('1', '使用帮助说明', '/^(帮助|bz|help)$/i', 'replyHelp', '1'),
+('2', '天气预报', '/(.+)天气/i', 'replyWeather', '1'),
+('3', '快递', '/快递(.+)/i', 'replyExpress', '1'),
+('4', '彩票种类和查询码', '/^(彩票|caipiao|cp)$/i', 'replyLotteryList', '1'),
+('5', '彩票开奖结果', '/cp(.+)/i', 'replyLotteryRes', '1'),
+('6', '找周边', '/找(.+)/i', 'replyFind', '1');
+INSERT;
+        D()->execute("DROP TABLE IF EXISTS {$db_prefix}plugin_wechat_user;");
+        D()->execute("DROP TABLE IF EXISTS {$db_prefix}plugin_wechat_autoreply;");
+        D()->execute($sql1);
+        D()->execute($sql2);
+        D()->execute($sql3);
         return true;//安装成功返回true，失败false
     }
     
     public function uninstall(){//卸载方法必须实现
         $db_prefix = C('DB_PREFIX');
         D()->execute("DROP TABLE IF EXISTS {$db_prefix}plugin_wechat_user;");
+        D()->execute("DROP TABLE IF EXISTS {$db_prefix}plugin_wechat_autoreply;");
         return true;//卸载成功返回true，失败false
     }
     
