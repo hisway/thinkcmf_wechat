@@ -23,7 +23,7 @@ class Lottery{
     public static function getLotteryList(){
         $lottery = file_get_contents('http://api.opencai.net/static/lottery.js');
         $lottery = substr($lottery, 16);
-        $n=strpos($lottery,';');
+        $n=strpos($lottery,'var');
         if ($n) $lottery=substr($lottery,0,$n);
         return json_decode($lottery,true);
     }

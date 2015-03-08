@@ -141,7 +141,7 @@ class PluginWechatModel extends CommonModel{
     	foreach($lotteryList as $k => $v){
     		$text .= $v['area'].$v['descr'] . " : cp" . $k . "
 ";
-    		if($k > 77) break;
+    		if($k > 76) break;
     	}
     	$weObj->text($text)->reply();
     }
