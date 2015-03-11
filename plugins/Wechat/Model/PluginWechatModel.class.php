@@ -107,13 +107,9 @@ class PluginWechatModel extends CommonModel{
     public function replyExpress($openid,$weObj,$config,$matchs){
     	$result = json_decode(\plugins\Wechat\Api\Express\Express::getExpressInfo($matchs[1]),true);
     	if($result['message'] == 'ok'){
-    		$kuaidi = '单号为' . $matchs[1] . '(最近更新时间:' . $result['updatetime'] . ')的查询结果如下:
-    	
-';
+    		$kuaidi = '单号为' . $matchs[1] . '(最近更新时间:' . $result['updatetime'] . ')的查询结果如下:\r\n\r\n';
     		foreach($result['data'] as $v){
-    			$kuaidi .= $v['time'] . ' ' . $v['context'] . '
-    	
-';
+    			$kuaidi .= $v['time'] . ' ' . $v['context'] . '\r\n\r\n';
     		}
     		$weObj->text($kuaidi)->reply();
     	}else if($result['status'] == '201'){
@@ -136,11 +132,9 @@ class PluginWechatModel extends CommonModel{
      */
     public function replyLotteryList($openid,$weObj,$config,$matchs){
     	$lotteryList = \plugins\Wechat\Api\Lottery\Lottery::getLotteryList();
-    	$text = "查询相应彩票结果请回复对应的查询码,比如,要查询超级大乐透,则请回复'cp0';
-";
+    	$text = "查询相应彩票结果请回复对应的查询码,比如,要查询超级大乐透,则请回复'cp0';\r\n";
     	foreach($lotteryList as $k => $v){
-    		$text .= $v['area'].$v['descr'] . " : cp" . $k . "
-";
+    		$text .= $v['area'].$v['descr'] . " : cp" . $k . "\r\n";
     		if($k > 76) break;
     	}
     	$weObj->text($text)->reply();
@@ -164,15 +158,9 @@ class PluginWechatModel extends CommonModel{
     	$lotteryRes = iconv('gbk', 'utf8', \plugins\Wechat\Api\Lottery\Lottery::getLotteryResult($lotteryCode,'json','utf8',5));
     	$lotteryRes = json_decode(trim($lotteryRes,chr(239).chr(187).chr(191)),true);
     	if($lotteryRes['rows'] > 0){
-    		$text = $lotteryName . "最近5期开奖结果如下:
-    	
-";
+    		$text = $lotteryName . "最近5期开奖结果如下:\r\n\r\n";
     		foreach($lotteryRes['data'] as $v){
-    			$text .= "第" . $v['expect'] . "期" . "
-开奖时间:" . $v['opentime'] . "
-结果:" . $v['opencode'] . "
-    	
-";
+    			$text .= "第" . $v['expect'] . "期" . "\r\n开奖时间:" . $v['opentime'] . "\r\n结果:" . $v['opencode'] . "\r\n\r\n";
     		}
     		$weObj->text($text)->reply();
     	}else{
@@ -211,7 +199,7 @@ class PluginWechatModel extends CommonModel{
     				$weObj->text('抱歉,查询不到')->reply();
     			}
     		}else{
-    			$weObj->text('请先发送位置哦,不然恩波不知道该从何找起')->reply();
+    			$weObj->text('请先发送位置哦(右下角的"+"号->位置->发送位置),不然恩波不知道该从何找起')->reply();
     			exit();
     		}
     	}else{
@@ -228,5 +216,53 @@ class PluginWechatModel extends CommonModel{
     		$weObj->text('请先发送位置哦,不然恩波不知道该从何找起')->reply();
     		exit();
     	}
+    }
+    /**
+     * [replyHot 回复热门]
+     * @param unknown $openid
+     * @param unknown $weObj
+     * @param unknown $config
+     * @param unknown $matchs
+     * @access public
+     * @author polo<gao.bo168@gmail.com>
+     * @version 2015-3-11 上午10:44:33
+     * @copyright Show More
+     */
+    public function replyHot($openid,$weObj,$config,$matchs){
+        $cat = \plugins\Wechat\Api\Hotarticle\Hotarticle::queryHotCat();
+        $text = "查看相应文章请回复对应的查询码,比如,要查询热门,则请回复'rm0';\r\n";
+        foreach($cat as $k=>$v){
+            $text .= $v['name'] . " : rm" . $k . "\r\n";
+        }
+        $weObj->text($text)->reply();
+    }
+    /**
+     * [replyHotList 回复热门文章列表图文]
+     * @param unknown $openid
+     * @param unknown $weObj
+     * @param unknown $config
+     * @param unknown $matchs
+     * @access public
+     * @author polo<gao.bo168@gmail.com>
+     * @version 2015-3-11 上午11:08:04
+     * @copyright Show More
+     */
+    public function replyHotList($openid,$weObj,$config,$matchs){
+        $cat = \plugins\Wechat\Api\Hotarticle\Hotarticle::queryHotCat();
+        $cat = $cat[$matchs[1]]['code'];
+        if(empty($cat)){
+            $weObj->text('抱歉,您查询的分类不存在~')->reply();
+            exit();
+        }
+        $hotList = \plugins\Wechat\Api\Hotarticle\Hotarticle::queryHotList($cat);
+        $article = array();
+        foreach($hotList as $k=>$v){
+            if($k > 9){
+                break;
+            }else{
+                $article[] = $v;
+            }
+        }
+        $weObj->news($article)->reply();
     }
 }
