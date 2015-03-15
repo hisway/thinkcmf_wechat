@@ -59,13 +59,13 @@ SQL;
         $sql3=<<<INSERT
 INSERT INTO `{$db_prefix}plugin_wechat_autoreply` VALUES
 ('1', '使用帮助说明', '/^(帮助|bz|help)$/i', 'replyHelp', '1'),
-('2', '天气预报', '/(.+)天气/i', 'replyWeather', '1'),
-('3', '快递', '/快递(.+)/i', 'replyExpress', '1'),
+('2', '天气预报', '/^(.+)天气$/i', 'replyWeather', '1'),
+('3', '快递', '/^快递(.+)$/i', 'replyExpress', '1'),
 ('4', '彩票种类和查询码', '/^(彩票|caipiao|cp)$/i', 'replyLotteryList', '1'),
-('5', '彩票开奖结果', '/cp(.+)/i', 'replyLotteryRes', '1'),
-('6', '找周边', '/找(.+)/i', 'replyFind', '1'),
+('5', '彩票开奖结果', '/^cp(.+)$/i', 'replyLotteryRes', '1'),
+('6', '找周边', '/^找(.+)$/i', 'replyFind', '1'),
 ('7', '热门文章', '/^(热门|remen|rm)$/i', 'replyHot', '1'),
-('8', '热门分类列表', '/rm(.+)/i', 'replyHotList', '1');
+('8', '热门分类列表', '/^rm(.+)$/i', 'replyHotList', '1');
 INSERT;
         D()->execute("DROP TABLE IF EXISTS {$db_prefix}plugin_wechat_user;");
         D()->execute("DROP TABLE IF EXISTS {$db_prefix}plugin_wechat_autoreply;");
