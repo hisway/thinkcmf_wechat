@@ -107,15 +107,15 @@ class PluginWechatModel extends CommonModel{
     public function replyExpress($openid,$weObj,$config,$matchs){
     	$result = json_decode(\plugins\Wechat\Api\Express\Express::getExpressInfo($matchs[1]),true);
     	if($result['message'] == 'ok'){
-    		$kuaidi = '单号为' . $matchs[1] . '(最近更新时间:' . $result['updatetime'] . ')的查询结果如下:\r\n\r\n';
+    		$kuaidi = "单号为" . $matchs[1] . "(最近更新时间:" . $result['updatetime'] . ")的查询结果如下:\r\n\r\n";
     		foreach($result['data'] as $v){
-    			$kuaidi .= $v['time'] . ' ' . $v['context'] . '\r\n\r\n';
+    			$kuaidi .= $v['time'] . " " . $v['context'] . "\r\n\r\n";
     		}
     		$weObj->text($kuaidi)->reply();
     	}else if($result['status'] == '201'){
     		$weObj->text($result['message'])->reply();
     	}else{
-    		$weObj->text('查询失败,请重新回复查询内容')->reply();
+    		$weObj->text("查询失败,请重新回复查询内容")->reply();
     	}
     }
     /**

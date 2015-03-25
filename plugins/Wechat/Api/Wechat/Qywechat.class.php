@@ -1353,12 +1353,14 @@ class Qywechat
 	 *        {
 	 *            "id": 1,
 	 *            "name": "广州研发中心",
-	 *            "parentid": 0
+	 *            "parentid": 0,
+	 *            "order": 40
 	 *        },
  	 *       {
 	 *          "id": 2
   	 *          "name": "邮箱产品部",
-  	 *          "parentid": 1
+  	 *          "parentid": 1,
+	 *          "order": 40
  	 *       }
 	 *    ]
 	 * }
