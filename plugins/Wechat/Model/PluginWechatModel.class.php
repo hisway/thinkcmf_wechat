@@ -155,7 +155,7 @@ class PluginWechatModel extends CommonModel{
     	$lotteryList = \plugins\Wechat\Api\Lottery\Lottery::getLotteryList();
     	$lotteryCode = $lotteryList[$matchs[1]]['code'];
     	$lotteryName = $lotteryList[$matchs[1]]['area'] . $lotteryList[$matchs[1]]['descr'];
-    	$lotteryRes = iconv('gbk', 'utf8', \plugins\Wechat\Api\Lottery\Lottery::getLotteryResult($lotteryCode,'json','utf8',5));
+    	$lotteryRes = \plugins\Wechat\Api\Lottery\Lottery::getLotteryResult($lotteryCode,'json',5);
     	$lotteryRes = json_decode(trim($lotteryRes,chr(239).chr(187).chr(191)),true);
     	if($lotteryRes['rows'] > 0){
     		$text = $lotteryName . "最近5期开奖结果如下:\r\n\r\n";

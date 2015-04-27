@@ -23,7 +23,7 @@ class TpWechat extends Wechat{
                 if (is_array($log)) $log = print_r($log,true);
                 return call_user_func($this->logcallback,$log);
             }elseif (class_exists('\Think\Log')) {
-	            \Think\Log::write('qywechat：'.$log, \Think\Log::DEBUG);
+	            \Think\Log::write('wechat：'.$log, \Think\Log::DEBUG);
 	        }
         }
         return false;

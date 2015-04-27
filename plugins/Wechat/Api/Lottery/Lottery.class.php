@@ -31,7 +31,6 @@ class Lottery{
      * [getLotteryResult 传入彩票代号得到彩票结果,自定义格式,xml格式或json格式,ut8编码或gb2312编码]
      * @param unknown $lotterycode
      * @param string $codetype
-     * @param string $encodetype
      * @param string $rows
      * @return mixed
      * @access public
@@ -39,9 +38,8 @@ class Lottery{
      * @version 2015-3-6 下午3:55:26
      * @copyright Show More
      */
-    public static function getLotteryResult($lotterycode,$codetype='json',$encodetype='utf8',$rows='5'){
-        if($encodetype == 'gb2312') $encodetype = '';
-        $url = 'http://f.opencai.net/' . $encodetype . '/' . $lotterycode . '-' . $rows . '.' . $codetype;
+    public static function getLotteryResult($lotterycode,$codetype='json',$rows='5'){
+        $url = 'http://120.26.124.144:8080/' . $lotterycode . '-' . $rows . '.' . $codetype;
         return file_get_contents($url);
     }
 }
